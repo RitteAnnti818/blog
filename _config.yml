@@ -1,0 +1,29 @@
+# Blog site config — served at https://RitteAnnti818.github.io/blog/
+title: Heeyeon Kim's Blog
+description: Notes, research, and writing.
+author:
+  name: Heeyeon Kim
+
+# IMPORTANT: project page settings
+# The blog lives in a repo named "blog", so it is served under /blog
+url: "https://RitteAnnti818.github.io"
+baseurl: "/blog"
+
+# Theme: minima is natively supported by GitHub Pages (no custom build needed)
+theme: minima
+minima:
+  date_format: "%Y-%m-%d"
+  skin: classic
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Link back to the main homepage from the blog header
+minima_extra: true
+
+# Don't process these files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
