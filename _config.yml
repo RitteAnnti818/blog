@@ -1,26 +1,30 @@
 # Blog site config — served at https://RitteAnnti818.github.io/blog/
 title: Heeyeon Kim's Blog
-description: Notes, research, and writing.
-author:
-  name: Heeyeon Kim
+author: Heeyeon Kim
+description: "Notes, research, and writing."
 
 # IMPORTANT: project page settings
 # The blog lives in a repo named "blog", so it is served under /blog
 url: "https://RitteAnnti818.github.io"
 baseurl: "/blog"
 
-# Theme: minima is natively supported by GitHub Pages (no custom build needed)
-theme: minima
-minima:
-  date_format: "%Y-%m-%d"
-  skin: classic
+# GitBook theme — includes a built-in light/dark mode toggle (top-right sun/moon)
+remote_theme: sighingnow/jekyll-gitbook
+
+# Code syntax highlighting style used by the theme
+syntax_highlighter_style: colorful
+
+# Table of contents in the sidebar
+toc:
+  enabled: true
+  h_min: 1
+  h_max: 3
 
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
-
-# Link back to the main homepage from the blog header
-minima_extra: true
+  - jekyll-readme-index
+  - jemoji
+  - jekyll-remote-theme
 
 # Don't process these files
 exclude:
