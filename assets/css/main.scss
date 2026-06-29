@@ -30,3 +30,155 @@ html {
     font-size: 16px;
   }
 }
+
+/* ----------------------------------------------------------------------
+   Light/Dark mode
+   Toggled by JS setting [data-theme="dark"] on <html> (see
+   _includes/head/custom.html). The default skin is the light theme.
+   ---------------------------------------------------------------------- */
+
+/* The toggle button in the top navigation */
+.greedy-nav .theme-toggle {
+  margin-left: auto; // push to the right edge of the nav
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.15em;
+  line-height: 1;
+  padding: 0 0.5em;
+}
+
+html[data-theme="dark"] {
+  $d-bg: #1f2329;
+  $d-surface: #2a2f37;
+  $d-text: #d8dbe0;
+  $d-muted: #9aa1ab;
+  $d-border: #3a414b;
+  $d-link: #6cb6ff;
+
+  background-color: $d-bg;
+
+  body {
+    background-color: $d-bg;
+    color: $d-text;
+  }
+
+  /* Headings & emphasis */
+  h1, h2, h3, h4, h5, h6,
+  .page__title, .archive__item-title, .author__name,
+  strong, b {
+    color: $d-text;
+  }
+
+  /* Masthead / top nav */
+  .masthead {
+    background-color: $d-bg;
+    border-bottom: 1px solid $d-border;
+  }
+  .greedy-nav {
+    background: $d-bg;
+  }
+  .greedy-nav a,
+  .greedy-nav .visible-links a,
+  .greedy-nav button,
+  .site-title {
+    color: $d-text;
+  }
+  .greedy-nav a:before {
+    background: $d-link;
+  }
+  .greedy-nav .hidden-links {
+    background: $d-surface;
+    border-color: $d-border;
+  }
+  .greedy-nav .hidden-links a {
+    color: $d-text;
+  }
+
+  /* Sidebar author profile */
+  .author__bio,
+  .author__urls a,
+  .author__urls .fa,
+  .page__meta,
+  .page__date,
+  .archive__item-excerpt,
+  .page__meta-readtime,
+  .nav__title {
+    color: $d-muted;
+  }
+  .author__urls.social-icons a {
+    color: $d-text;
+  }
+  .sidebar .author__urls {
+    border-color: $d-border;
+  }
+
+  /* Links */
+  a {
+    color: $d-link;
+  }
+  a:hover {
+    color: lighten($d-link, 10%);
+  }
+
+  /* Body content */
+  .page__content,
+  .page__content p,
+  .page__content li,
+  .page__content dl {
+    color: $d-text;
+  }
+
+  /* Code */
+  code,
+  pre,
+  .highlight,
+  div.highlighter-rouge,
+  figure.highlight {
+    background-color: $d-surface;
+    color: $d-text;
+  }
+  blockquote {
+    border-left-color: $d-border;
+    color: $d-muted;
+  }
+
+  /* Rules & borders */
+  hr,
+  .archive__item + .archive__item,
+  .toc,
+  .toc .nav__title {
+    border-color: $d-border;
+  }
+
+  /* Footer */
+  .page__footer {
+    background-color: $d-surface;
+    color: $d-muted;
+  }
+  .page__footer a,
+  .page__footer-follow .social-icons a {
+    color: $d-muted;
+  }
+
+  /* Pagination */
+  .pagination a {
+    color: $d-link;
+    border-color: $d-border;
+  }
+  .pagination a:hover {
+    background-color: $d-surface;
+    border-color: $d-link;
+  }
+
+  /* Tables */
+  table {
+    color: $d-text;
+  }
+  td, th {
+    border-color: $d-border;
+  }
+  tbody tr:nth-child(even) {
+    background-color: $d-surface;
+  }
+}
