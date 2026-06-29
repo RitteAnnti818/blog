@@ -8,16 +8,24 @@ This repo is separate from the main homepage repo
 
 ## Add a post
 
-Create `_posts/YYYY-MM-DD-title.md`:
+Posts are organized into sidebar categories by folder:
+
+- `_research/` → **Research** section
+- `_notes/` → **Notes** section
+
+Create `_research/YYYY-MM-DD-title.md` (or `_notes/...`):
 
 ```markdown
 ---
-layout: post
 title: "Your title"
 date: 2026-06-29
+category: Research
 ---
 
 Content in Markdown.
 ```
 
 Commit and push to `main`; GitHub Pages rebuilds automatically.
+
+To add a new category: create a `_name/` folder, then register it under
+`collections:` and `ordered_collections:` in `_config.yml`.

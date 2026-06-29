@@ -6,14 +6,19 @@ permalink: /
 
 # Heeyeon Kim's Blog
 
-Welcome! This is where I post notes on research, reading, and projects.
+Welcome! Browse posts by category in the sidebar. Use the **"A" button at the
+top right** to switch between light, sepia, and dark (Night) mode.
 
-Use the sidebar to browse, and the **sun/moon button at the top right** to switch
-between light and dark mode.
+## Research
 
-## Recent posts
+{% for post in site.research %}
 
-{% for post in site.posts %}
+- [{{ post.title }}]({{ post.url | relative_url }}) — <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+  {% endfor %}
+
+## Notes
+
+{% for post in site.notes %}
 
 - [{{ post.title }}]({{ post.url | relative_url }}) — <small>{{ post.date | date: "%Y-%m-%d" }}</small>
   {% endfor %}

@@ -14,6 +14,33 @@ remote_theme: sighingnow/jekyll-gitbook
 # Code syntax highlighting style used by the theme
 syntax_highlighter_style: colorful
 
+# Sidebar categories — each collection becomes its own section in the GitBook sidebar
+collections:
+  research:
+    output: true
+    sort_by: date
+  notes:
+    output: true
+    sort_by: date
+
+# Order the sections appear in the sidebar (top to bottom)
+ordered_collections:
+  - research
+  - notes
+
+# Default layout for posts inside each collection
+defaults:
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: post
+
 # Table of contents in the sidebar
 toc:
   enabled: true
