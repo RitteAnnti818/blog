@@ -1,60 +1,86 @@
 # Blog site config — served at https://RitteAnnti818.github.io/blog/
-title: Heeyeon Kim's Blog
-author: Heeyeon Kim
-description: "Notes, research, and writing."
+# Theme: Minimal Mistakes (same theme as kimjy99.github.io)
 
-# IMPORTANT: project page settings
-# The blog lives in a repo named "blog", so it is served under /blog
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site
+title: "Heeyeon Kim's Blog"
+name: "Heeyeon Kim"
+description: "Notes on research, reading, and projects."
 url: "https://RitteAnnti818.github.io"
 baseurl: "/blog"
+repository: "RitteAnnti818/blog"
+words_per_minute: 200
 
-# GitBook theme — includes a built-in light/dark mode toggle (top-right sun/moon)
-remote_theme: sighingnow/jekyll-gitbook
+# Build settings
+markdown: kramdown
+locale: "en-US"
 
-# Code syntax highlighting style used by the theme
-syntax_highlighter_style: colorful
+# Outputting
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: /page:num/
+timezone: Asia/Seoul
 
-# Sidebar categories — each collection becomes its own section in the GitBook sidebar
-collections:
-  research:
-    output: true
-    sort_by: date
-  notes:
-    output: true
-    sort_by: date
+# Left sidebar author profile
+author:
+  name: "Heeyeon Kim"
+  bio: "Notes on research, reading, and projects."
+  location: "Republic of Korea"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/RitteAnnti818"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:heeyeon23@jbnu.ac.kr"
+    - label: "Homepage"
+      icon: "fas fa-fw fa-home"
+      url: "https://RitteAnnti818.github.io"
 
-# Order the sections appear in the sidebar (top to bottom)
-ordered_collections:
-  - research
-  - notes
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/RitteAnnti818"
 
-# Default layout for posts inside each collection
-defaults:
-  - scope:
-      path: ""
-      type: research
-    values:
-      layout: post
-  - scope:
-      path: ""
-      type: notes
-    values:
-      layout: post
-
-# Table of contents in the sidebar
-toc:
-  enabled: true
-  h_min: 1
-  h_max: 3
+include:
+  - _pages
 
 plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
   - jekyll-feed
-  - jekyll-readme-index
-  - jemoji
-  - jekyll-remote-theme
+  - jekyll-include-cache
 
-# Don't process these files
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - vendor
+# Archive pages use Liquid (GitHub Pages can't run jekyll-archives)
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+      show_date: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true

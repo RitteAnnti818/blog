@@ -1,31 +1,35 @@
 # blog
 
-Personal blog built with [Jekyll](https://jekyllrb.com/) (minima theme),
+Personal blog built with [Jekyll](https://jekyllrb.com/) and the
+[Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) theme,
 hosted on GitHub Pages at **https://RitteAnnti818.github.io/blog/**.
 
-This repo is separate from the main homepage repo
-(`RitteAnnti818.github.io`) so the two never interfere.
+Separate from the main homepage repo (`RitteAnnti818.github.io`).
 
 ## Add a post
 
-Posts are organized into sidebar categories by folder:
-
-- `_research/` → **Research** section
-- `_notes/` → **Notes** section
-
-Create `_research/YYYY-MM-DD-title.md` (or `_notes/...`):
+Create `_posts/YYYY-MM-DD-title.md`:
 
 ```markdown
 ---
 title: "Your title"
 date: 2026-06-29
-category: Research
+categories:
+  - Research   # or Notes, or a new category name
+tags:
+  - some-tag
 ---
 
 Content in Markdown.
 ```
 
-Commit and push to `main`; GitHub Pages rebuilds automatically.
+Commit and push to `main`; GitHub Pages rebuilds automatically. New categories
+appear on the `/categories/` page automatically — no config change needed.
 
-To add a new category: create a `_name/` folder, then register it under
-`collections:` and `ordered_collections:` in `_config.yml`.
+## Structure
+
+- `_config.yml` — theme + site settings (skin, author sidebar, archives)
+- `_posts/` — blog posts
+- `_pages/` — Categories and Tags archive pages
+- `_data/navigation.yml` — top nav bar
+- `about.md` — About page
