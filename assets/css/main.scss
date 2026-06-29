@@ -10,11 +10,10 @@
 @import "minimal-mistakes";
 
 /* ----------------------------------------------------------------------
-   Overrides
+   Base font size
+   Minimal Mistakes scales 16 -> 18 -> 20 -> 22px as the screen widens;
+   these values keep text smaller and steadier.
    ---------------------------------------------------------------------- */
-
-/* Shrink the base font size. Minimal Mistakes scales 16 -> 18 -> 20 -> 22px
-   as the screen widens; these values keep text smaller and steadier. */
 html {
   font-size: 14px; // default / small screens
 
@@ -32,153 +31,68 @@ html {
 }
 
 /* ----------------------------------------------------------------------
-   Light/Dark mode
-   Toggled by JS setting [data-theme="dark"] on <html> (see
-   _includes/head/custom.html). The default skin is the light theme.
+   Sidebar category list (under the author profile)
+   Rendered by _includes/sidebar-custom.html
    ---------------------------------------------------------------------- */
+.sidebar-categories {
+  margin-top: 1.5em;
+  font-size: 0.8em;
 
-/* The toggle button in the top navigation */
-.greedy-nav .theme-toggle {
-  margin-left: auto; // push to the right edge of the nav
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  font-size: 1.15em;
-  line-height: 1;
-  padding: 0 0.5em;
+  .nav__items {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    margin-bottom: 0.35em;
+  }
+
+  a {
+    color: $text-color;
+
+    &:hover {
+      color: $primary-color;
+      text-decoration: none;
+    }
+  }
+
+  .sidebar-cat--all {
+    font-weight: bold;
+  }
+
+  .sidebar-cat-count {
+    color: $muted-text-color;
+  }
+
+  hr {
+    margin: 0.6em 0;
+  }
 }
 
-html[data-theme="dark"] {
-  $d-bg: #1f2329;
-  $d-surface: #2a2f37;
-  $d-text: #d8dbe0;
-  $d-muted: #9aa1ab;
-  $d-border: #3a414b;
-  $d-link: #6cb6ff;
+/* ----------------------------------------------------------------------
+   Tag chips in the post list (rendered by _includes/archive-single.html)
+   ---------------------------------------------------------------------- */
+.archive__item-tags {
+  margin-top: 0.5em;
+  font-size: 0.7em;
+  color: $muted-text-color;
 
-  background-color: $d-bg;
-
-  body {
-    background-color: $d-bg;
-    color: $d-text;
+  .fa-tags {
+    margin-right: 0.3em;
   }
 
-  /* Headings & emphasis */
-  h1, h2, h3, h4, h5, h6,
-  .page__title, .archive__item-title, .author__name,
-  strong, b {
-    color: $d-text;
-  }
+  .archive__tag {
+    display: inline-block;
+    padding: 0.15em 0.6em;
+    margin: 0.15em 0.2em 0.15em 0;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    color: $text-color;
 
-  /* Masthead / top nav */
-  .masthead {
-    background-color: $d-bg;
-    border-bottom: 1px solid $d-border;
-  }
-  .greedy-nav {
-    background: $d-bg;
-  }
-  .greedy-nav a,
-  .greedy-nav .visible-links a,
-  .greedy-nav button,
-  .site-title {
-    color: $d-text;
-  }
-  .greedy-nav a:before {
-    background: $d-link;
-  }
-  .greedy-nav .hidden-links {
-    background: $d-surface;
-    border-color: $d-border;
-  }
-  .greedy-nav .hidden-links a {
-    color: $d-text;
-  }
-
-  /* Sidebar author profile */
-  .author__bio,
-  .author__urls a,
-  .author__urls .fa,
-  .page__meta,
-  .page__date,
-  .archive__item-excerpt,
-  .page__meta-readtime,
-  .nav__title {
-    color: $d-muted;
-  }
-  .author__urls.social-icons a {
-    color: $d-text;
-  }
-  .sidebar .author__urls {
-    border-color: $d-border;
-  }
-
-  /* Links */
-  a {
-    color: $d-link;
-  }
-  a:hover {
-    color: lighten($d-link, 10%);
-  }
-
-  /* Body content */
-  .page__content,
-  .page__content p,
-  .page__content li,
-  .page__content dl {
-    color: $d-text;
-  }
-
-  /* Code */
-  code,
-  pre,
-  .highlight,
-  div.highlighter-rouge,
-  figure.highlight {
-    background-color: $d-surface;
-    color: $d-text;
-  }
-  blockquote {
-    border-left-color: $d-border;
-    color: $d-muted;
-  }
-
-  /* Rules & borders */
-  hr,
-  .archive__item + .archive__item,
-  .toc,
-  .toc .nav__title {
-    border-color: $d-border;
-  }
-
-  /* Footer */
-  .page__footer {
-    background-color: $d-surface;
-    color: $d-muted;
-  }
-  .page__footer a,
-  .page__footer-follow .social-icons a {
-    color: $d-muted;
-  }
-
-  /* Pagination */
-  .pagination a {
-    color: $d-link;
-    border-color: $d-border;
-  }
-  .pagination a:hover {
-    background-color: $d-surface;
-    border-color: $d-link;
-  }
-
-  /* Tables */
-  table {
-    color: $d-text;
-  }
-  td, th {
-    border-color: $d-border;
-  }
-  tbody tr:nth-child(even) {
-    background-color: $d-surface;
+    &:hover {
+      background-color: $lighter-gray;
+      text-decoration: none;
+    }
   }
 }

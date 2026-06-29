@@ -5,6 +5,7 @@ categories:
   - Research
 tags:
   - intro
+  - paper-review
 ---
 
 This is the **Research** category. I'll post paper notes, ideas, and experiment

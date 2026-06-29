@@ -5,6 +5,7 @@ categories:
   - Notes
 tags:
   - intro
+  - til
 ---
 
 This is the **Notes** category — shorter posts, reading notes, and everyday
